@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "person",
+        "company"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "icn": {
+      "type": "integer"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "integer"
+    },
+    "address": {
+      "type": "json"
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project",
+      "mappedBy": "contact"
+    }
+  }
+}
